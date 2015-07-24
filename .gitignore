@@ -1,3 +1,6 @@
+# Ignore output
+output/*
+
 # Scrap files
 deleteme*.py
 
