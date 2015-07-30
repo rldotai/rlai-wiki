@@ -1,4 +1,8 @@
+# Quickstart
 
+```bash
+python build_site.py
+```
 
 # Preparation
 
