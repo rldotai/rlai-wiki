@@ -9,14 +9,19 @@ from jinja2 import Environment, FileSystemLoader
 from render_markdown import render_markdown
 
 
+mathjax_url = "http://cdn.mathjax.org/mathjax/latest/MathJax.js"
+
+
 def gen_find(pattern, top):
     for root, dirs, files in os.walk(top):
         for filename in fnmatch.filter(files, pattern):
             yield os.path.join(root, filename)
 
+
 def more_recent(a, b):
     """Return `True` if `a` was more recently modified than `b`."""
     return (os.stat(a).st_mtime - os.stat(b).st_mtime) > 1
+
 
 def copytree(src, dst, symlinks=False, ignore=None):
     """
@@ -33,6 +38,7 @@ def copytree(src, dst, symlinks=False, ignore=None):
         else:
             if not os.path.exists(d) or more_recent(s, d):
                 shutil.copy(s, d)
+
 
 def main(source_dir, output_dir):
     # Directories to copy, of the form [(<source_path>, <output_path>), ...]
@@ -62,7 +68,7 @@ def main(source_dir, output_dir):
 
         # Render the page body with customized markdown
         body = render_markdown(open(src, 'r').read())
-        rendered = template.render(body=body)
+        rendered = template.render(body=body, mathjax_url=mathjax_url)
 
         # Progress update
         print(src, '-->', dst)

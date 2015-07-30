@@ -1,16 +1,35 @@
 # Quickstart
 
 ```bash
-python build_site.py
+source activate py-web
+make
 ```
 
-# Preparation
+# TODO
+
+- Better MathJax configuration
+- Get the Math renderer and Highlight renderer working properly, in separate files
+- Add wiki-link preprocessor
+- Add actual style sheets
+- Create index page
+- Solve portability issue w/r/t custom environment.
+    + Create own conda installer for required packages?
+
+# Slowstart
+
+## Preparation
 
 - Install relevant packages
+    + Ideally, using `conda` with environment `py-web`
+
+```bash
+conda create -n py-web python=3.4 anaconda
+```
+
 - Generate `pygments.css`
 
 ```bash
-pygmentize -S default -f html > site/pygments.css
+pygmentize -S default -f html > source/pygments.css
 ```
 
 # Wiki Structure
