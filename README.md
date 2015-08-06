@@ -2,6 +2,7 @@
 
 ```bash
 source activate py-web
+make directories
 make
 ```
 

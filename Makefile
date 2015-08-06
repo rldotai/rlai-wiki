@@ -8,6 +8,12 @@ all: website
 website:
 	python build_site.py 
 
+directories:
+	mkdir -p source/images
+	mkdir -p source/pages
+	mkdir -p source/style
+	mkdir -p source/templates
+
 
 pygments:
 	pygmentize -S default -f html > source/style/pygments.css
