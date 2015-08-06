@@ -1,5 +1,7 @@
 # Mean Squared Error (MSE)
 
+$$\text{MSE}(\theta)$$
+
 # Bellman Error (BE)
 
 ## Mean Squared Bellman Error (MSBE)

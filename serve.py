@@ -3,7 +3,6 @@
 Script for running a simple test server, with the `output/` directory as root.
 """
 
-
 import http.server
 import socketserver
 import os 

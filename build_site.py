@@ -8,7 +8,6 @@ from jinja2 import Environment, FileSystemLoader
 
 from render_markdown import render_markdown
 
-
 mathjax_url = "http://cdn.mathjax.org/mathjax/latest/MathJax.js"
 
 
@@ -62,22 +61,15 @@ def main(source_dir, output_dir):
         filename = os.path.basename(src)
         base, _ = os.path.splitext(filename)
         dst = os.path.join(output_dir, base + '.html')
-        # print(src)
-        # print(base)
-        # print(dst)
 
         # Render the page body with customized markdown
         body = render_markdown(open(src, 'r').read())
         rendered = template.render(body=body, mathjax_url=mathjax_url)
 
         # Progress update
-        print(src, '-->', dst)
+        print(src, ' ---> ', dst)
         with open(dst, 'w') as f:
             f.write(rendered)
-
-
-
-
 
 
 if __name__ == "__main__":
