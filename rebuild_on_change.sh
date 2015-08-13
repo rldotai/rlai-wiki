@@ -8,5 +8,5 @@ trigger=*.md
 while true; do
 	change=$(inotifywait -rq -e close_write,moved_to,create .)
 	change=${change##*/ * }
-	if [[ "$change" == $trigger ]]; then make website; fi
+	if [[ "$change" == $trigger ]]; then make test; fi
 done

@@ -41,7 +41,7 @@ def copytree(src, dst, symlinks=False, ignore=None):
 
 def main(source_dir, output_dir):
     # Directories to copy, of the form [(<source_path>, <output_path>), ...]
-    to_copy = [('style', 'style'), ('images', 'images')] 
+    to_copy = [('style', 'style'), ('images', 'images'), ('scripts', 'assets')] 
 
     # Directories used to build the page
     template_dir = os.path.join(source_dir, 'templates')
